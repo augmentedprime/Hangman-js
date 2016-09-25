@@ -1,77 +1,14 @@
 
 
-//prints the hangman corresponding to the number of tries
-function hangmanStringFor(tries) {
-
-var initialCount = 4;
-
-var expected = null;
-
-switch (tries) {
-case 0 : expected = 
-"___________\n" +
-						" |         |\n" +
-						" |         O    \n" +
-						" |        /|\\\n" +
-						" |        / \\\n" +
-						" |  ___________\n" +
-						" |  |         |\n" +
-						"_|__|_________|\n";
-						break;
-		case 1 : expected =
-				"___________\n" +
-						" |         |\n" +
-						" |         O    \n" +
-						" |        /|\\\n" +
-						" |            \n" +
-						" |  ___________\n" +
-						" |  |         |\n" +
-						"_|__|_________|\n";
-		break;
-		case 2 : expected = 
-				"___________\n" +
-						" |         |\n" +
-						" |         O\n" +
-						" |         |\n" +
-						" |\n" +
-						" |  ___________\n" +
-						" |  |         |\n" +
-						"_|__|_________|\n";
-		break;
-		case 3 : expected = 
-				"___________\n" +
-						" |         |\n" +
-						" |         O\n" +
-						" |\n" +
-						" |\n" +
-						" |  ___________\n" +
-						" |  |         |\n" +
-						"_|__|_________|\n";
-		break;
-		case 4 : expected = 
-				"___________\n" +
-						" |         |\n" +
-						" |\n" +
-						" |\n" +
-						" |\n" +
-						" |  ___________\n" +
-						" |  |         |\n" +
-						"_|__|_________|\n";
-		break;
-	}
-	return expected;
-}
-
-
 //returns true if a guess letter is in word (doesn't matter if it appears multiple times)
 function isMatch(givenLetter, givenWord){
 
-	var i;
-	for (i = 0; i<givenWord.length; i++){
-		  if (givenLetter === givenWord.substring(i, i+1)){
-			    return true;
-		  }
-	}
+	  var i;
+	  for (i = 0; i<givenWord.length; i++){
+		    if (givenLetter.toUpperCase() === givenWord.substring(i, i+1).toUpperCase()){
+			      return true;
+		    }
+	  }
 	  return false;
 } 
 
@@ -96,14 +33,6 @@ function drawMatchingLetters(letters, correct){
 }
 
 
-
-//use to print current status of game, (hangman drawing & letters)
-function printGame(stateCount, stateGuess, stateCorrect){
-	  hangmanStringFor(stateCount);
-	drawMatchingLetters(stateGuess, stateCorrect);
-}
-
-
 //Method for accepting the word and letter should go here
 
 
@@ -111,14 +40,12 @@ function printGame(stateCount, stateGuess, stateCorrect){
 
 
 function appState(){
-	var appState = {word: "",
-				guesses: new Set(),
-				          hangmanCount: initialCount};
+
+    var initialCount = 4;
+	  var appState = {word: "",
+				            guesses: new Set(),
+				            hangmanCount: initialCount};
     return appState;
 }
 
-
-function setWord(word){
-	appState.word = word;
-}
 
