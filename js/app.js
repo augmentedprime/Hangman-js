@@ -1,3 +1,5 @@
+
+
 //prints the hangman corresponding to the number of tries
 function hangmanStringFor(tries) {
 
@@ -66,32 +68,33 @@ function isMatch(givenLetter, givenWord){
 
 	var i;
 	for (i = 0; i<givenWord.length; i++){
-		if (givenLetter.equals(givenWord.substring(i, i+1){
+		  if (givenLetter.equals(givenWord.substring(i, i+1))){
 			return true;
 		}
 	}
 	return false;
-}
+} 
 
 
 //draws correct letters, spaces, and _ for letters not guessed yet
 function drawMatchingLetters(letters, correct){
 
 var result = "";
+    var i = 0;
 
-	for (int i=0; i<correct.length; i++){
+	for (i=0; i<correct.length; i++){
 		
 		var currentLetter = correct.substring(i, i+1);
 		if (currentLetter === " "){
 			result += " ";
 			
-		} else if {letters.has(currentLetter)){
+		} else if (letters.has(currentLetter)){
 			result += currentLetter;
 		} else result += "_";
 	}
 	return result;
 	}
-}
+
 
 
 //use to print current status of game, (hangman drawing & letters)
@@ -108,9 +111,10 @@ function printGame(stateCount, stateGuess, stateCorrect){
 
 
 function appState(){
-	var appState {word: "",
+	var appState = {word: "",
 				guesses: new Set(),
-				hangmanCount: initialCount};  
+				          hangmanCount: initialCount};
+    return appState;
 }
 
 
