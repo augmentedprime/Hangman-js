@@ -1,0 +1,24 @@
+{
+  "name": "hangman-js",
+  "version": "1.0.0",
+  "description": "hangman game",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/augmentedprime/Hangman-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/augmentedprime/Hangman-js/issues"
+  },
+  "homepage": "https://github.com/augmentedprime/Hangman-js#readme",
+  "devDependencies": {
+    "eslint": "^3.6.0",
+    "eslint-config-google": "^0.6.0",
+    "tape": "^4.6.0"
+  }
+}
