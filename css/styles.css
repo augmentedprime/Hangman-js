@@ -1,4 +1,36 @@
-p {
-    color: red;
-    background-color: green;
+.everything {
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    width: 50em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+}
+
+.user-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    margin: 5px;
+
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    text-align: center;
 }
