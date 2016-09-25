@@ -5,7 +5,8 @@
         <meta charset="utf-8">
         <title>Hangman</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="js/app.js"></script>
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
@@ -15,27 +16,39 @@
                     Hangman
                 </div>
                 <div id="game">
-                    Game stuff will go here. Let's figure out how to make it
-                    look good. We can change this to be a premade image, or we
-                    can try to be super-fancy and generate an image on the fly
-                    from css.
+                    <div id="hangman"></div>
                 </div>
                 <div class="user-input">
                     <div class="form-group">
-                        <input type="text" placeholder="Guess" class="form-control" id="guess">
+                        <input type="text"
+                               placeholder="Guess"
+                               class="form-control"
+                               id="guess">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Secret Word" class="form-control" id="secret-word">
+                        <input id="secret-word"
+                               type="text"
+                               placeholder="Secret Word"
+                               class="form-control"
+                               id="secret-word">
                     </div>
                 </div>
                 <div class="buttons form-group">
-                    <button type="button" class="btn btn-primary">Choose Word</button>
-                    <button type="button" class="btn btn-primary">Submit Guess</button>
-                    <button type="button" class="btn btn-primary">New Game</button>
+                    <button type="button"
+                            class="btn btn-primary"
+                            onclick="chooseWord()"
+                            id="choose-word">Choose Word</button>
+                    <button type="button"
+                            class="btn btn-primary"
+                            onclick="submitGuess()"
+                            id="submit-guess">Submit Guess</button>
+                    <button type="button"
+                            class="btn btn-primary"
+                            onclick="newGame()"
+                            id="new-game">New Game</button>
                 </div>
             </div>
         </div>
+        <script>newGame()</script>
     </body>
-    <script src="js/app.js"></script>
 </html>
-xo
