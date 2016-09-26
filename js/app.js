@@ -72,15 +72,25 @@ function drawHangman($element, livesLeft) {
 function drawGame() {
     var $game = $('#game')[0];
     var $hangman = $('#hangman')[0];
-    var livesLeft = 3; // TODO: this value should come from appState
+    var livesLeft = currentAppState.hangmanCount;
 
     drawHangman($hangman, livesLeft);
 }
 
 function submitGuess() {
     currentGuess = $('#guess')[0].value;
+    //make sure it's a new guess
+    if (currentAppState.guesses.has(currentGuess) || currentGuess.length>1){
+        console.log('invalid guess ' + currentGuess)
+        //if guess is new
+    } else {
+    currentAppState.guesses = currentAppState.guesses.add(currentGuess);
     console.log('Guessed letter: ' + currentGuess);
-    // TODO: Add appropriate logic hire
+    if (!isMatch(currentGuess, currentAppState.word)){
+        currentAppState.hangmanCount--;
+    }
+    }
+    drawGame();
 
 }
 
